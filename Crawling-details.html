@@ -93,7 +93,7 @@
 
             <div class="portfolio-details-slider swiper">
               <div class="swiper-wrapper align-items-center">
-                  <img src="assets/img/portfolio/back/GEOLOCATION_API2.jpg" STYLE="width: 95%;">
+                  <img src="assets/img/portfolio/back/Crawling2.PNG" STYLE="width: 95%;">
               </div>
               <div class="swiper-pagination"></div>
             </div>
@@ -101,32 +101,74 @@
 
 
             <div class="portfolio-info">
-              <h3>Geolocation API는 자바스크립트 프로그램이 사용자의 실제 위치를 브라우저에게 요청할 수 있도록 해준다.</h3><br>
-              <h6>Geolocation API는 navigator.geolocation 객체를 통해 사용할 수 있습니다</h6><br>
-              <h6> if (navigator.geolocation) { 이 부분은 브라우저가 Geolocation API를 지원하는지 확인합니다.<br> navigator.geolocation은 브라우저의 Geolocation API에 액세스하는 객체입니다. 이 조건문은 브라우저가 Geolocation을 지원하는 경우에만 실행됩니다.</h6><br>
-              <h6> navigator.geolocation.watchPosition 함수는 위치 정보를 주기적으로 업데이트하는데 사용됩니다.<br> 새로운 위치 정보가 이 함수의 콜백 함수로 전달됩니다. 이 콜백 함수는 pos 매개변수를 받고, 해당 위치의 위도와 경도를 #latitude와 #longitude 요소에 표시</h6><br>
-              <h6> btnStop"라는 버튼이 클릭될 때 위치 정보를 더 이상 업데이트하지 않도록 설정한 id를 전달하고 지원하지 않는 브라우저를 사용할 시 알람을 띄워줍니다.</h6><br>
+              <h3>주간 날씨 데이터를 크롤링하고 요일마다 매칭되는 데이터를 출력하기 </h3><br>
+              <h6>주간 날씨는 구글에 "주간날씨" 를 검색했을 때 나타나는 정보들을 크롤링해서 사용했습니다.</h6>
             </div>
 
           <div class="portfolio-details-slider swiper">
             <div class="swiper-wrapper align-items-center">
-              <img src="assets/img/portfolio/back/GEOLOCATION_API3.PNG" STYLE="width: 95%;">
+              <img src="assets/img/portfolio/back/Crawling3.PNG" STYLE="width: 95%;">
             </div>
             <div class="swiper-pagination"></div>
           </div>
 
           <div class="portfolio-info">
-            <h3>Geolocation API와 Open Weather API를 결합해
-            사용자 위치정보에 따른 날씨 데이터를 출력하기 </h3><br>
-            <h6>우선 현재 브라우저에서 Geolocation을 지원하는지 확인합니다</h6><br>
-            <h6>Geolocation을 지원하는 경우, 현재 위치 정보를 가져오기 위해 getCurrentPosition 함수를 호출합니다. 위치 정보는 position 매개변수로 전달됩니다.</h6><br>
-            <h6>객체에서 위도, 경도 값을 추출하여 각각 latitude, longitude 변수에 저장 합니다.</h6><br>
-            <h6>fetch 함수를 사용하여 OpenWeatherMap API를 호출합니다. 위에서 얻은 위도와 경도 정보를 사용하여 요청 URL을 생성, OpenWeatherMap API 키를 삽입해야 합니다.</h6><br>
-            <h6>API 요청이 성공한 경우, 응답 데이터를 JSON 형식으로 변환하고 API 응답에서 온도, 날씨, 도시 정보를 추출하여 각각의 변수에 저장합니다.</h6><br>
-            <h6>날씨 정보의 간략화를 위해 "Mist" 또는 "Thunderstorm"인 경우, weather 변수를 "Rain"으로 설정합니다. 그 외의 경우에는 API에서 받은 날씨 정보를 그대로 사용합니다.</h6><br>
-            <h6>displayWeather(temperature, weather, name);: displayWeather 함수를 호출하여 날씨 정보를 화면에 표시합니다.</h6><br>
+            <h6>필요한것은 요일과 날씨정보 입니다. 따라서 요일을 출력하는 영역과 날씨정보를 포함하고있는 이모티콘속 날씨값을 추출합니다</h6><br>
+            <h6>추출한 값을 받고싶은 데이터로 변형해 컨트롤러에 담아 인덱스에 뿌려줍니다.</h6><br>
+          </div>
+
+          <div class="portfolio-details-slider swiper">
+            <div class="swiper-wrapper align-items-center">
+              <img src="assets/img/portfolio/back/Crawling4.PNG" STYLE="width: 95%;">
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+          <div class="portfolio-info">
+            <h6>인덱스에 재료가 준비되었다면 크롤링한 값에 따라 반응하는 버튼요소를 만들어줍니다.</h6><br>
+            <h6>비활성화에 나타나는 week0, 활성화에 나타나는 week1 이미지를 생성합니다</h6><br>
+            <h6>클릭한 버튼만 week1 이미지로 변환되고 나머지 버튼은 week0 이미지로 변경되도록 설계했습니다.</h6><br>
+          </div>
+
+          <div class="portfolio-details-slider swiper">
+            <div class="swiper-wrapper align-items-center">
+              <img src="assets/img/portfolio/back/Crawling5.PNG" STYLE="width: 95%;">
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+          <div class="portfolio-info">
+            <h6>이제 만들었던 버튼위에 크롤링해서 가져왔던 요일들을 삽입해줍니다. 빈 버튼 위에 크롤링 데이터가 들어감으로 </h6><br>
+            <h6>단순히 월,화,수,목,금,토,일을 보여주는 것이 아니라 매일 변화하는 실시간 버튼이 완성됩니다.</h6><br>
+            <h6>24시가 지나면 화요일은 가장 뒷자리로 수요일은 맨앞으로 당겨지게 됩니다.</h6><br>
+          </div>
+
+          <div class="portfolio-details-slider swiper">
+            <div class="swiper-wrapper align-items-center">
+              <img src="assets/img/portfolio/back/Crawling6.PNG" STYLE="width: 95%;">
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+          <div class="portfolio-info">
+            <h6>버튼을 클릭했을 때 날씨와 매칭되는 코디를 추천하도록 버튼을 설정해줍니다.</h6><br>
+            <h6>여기서 문제가 발생되는데 구글에서 제공하는 정보와 데이터베이스의 값이 매칭되지않아 컨버트하는 과정을</h6><br>
+            <h6>한번 더 거치게 됩니다. 크롤링하는 데이터에 맑음이 포함되면 맑음으로 (소나기, 뇌우, 강우)가 포함되면 전부 "비"로 변환하여 인덱스에 뿌려주었습니다.</h6><br>
 
           </div>
+
+          <div class="portfolio-details-slider swiper">
+            <div class="swiper-wrapper align-items-center">
+              <img src="assets/img/portfolio/back/Crawling7.PNG" STYLE="width: 95%;">
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+          <div class="portfolio-info">
+            <h6>마지막으로 해당하는 요일 버튼을 누르면 7개의 테이블중 코디에 저장된 날씨와 해당 요일의 날씨가 매칭됩니다.</h6><br>
+            <h6>출력 결과물을 랜덤으로 출력해주어 위와같은 주간 날씨별 추천 코디 기능을 완성할 수 있었습니다.</h6><br>
+          </div>
+
 
         </div>
 
