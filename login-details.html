@@ -91,83 +91,21 @@
 
         <div class="row gy-4">
 
-            <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
-                  <img src="assets/img/portfolio/back/Crawling2.PNG" STYLE="width: 95%;">
-              </div>
-              <div class="swiper-pagination"></div>
+          <div class="portfolio-details-slider swiper">
+            <div class="swiper-wrapper align-items-center">
+              <img src="assets/img/portfolio/front/login2.PNG" STYLE="width: 95%;">
             </div>
-
-
+            <div class="swiper-pagination"></div>
+          </div>
 
             <div class="portfolio-info">
-              <h3>주간 날씨 데이터를 크롤링하고 요일마다 매칭되는 데이터를 출력하기 </h3><br>
-              <h6>주간 날씨는 구글에 "주간날씨" 를 검색했을 때 나타나는 정보들을 크롤링해서 사용했습니다.</h6>
+              <h3>조건에 따라 변화하는 이미지 출력하기</h3><br>
+              <h6>날씨 정보에 따라 로그인 시 출력되는 이미지를 생성하고 HTML 페이지에 표시하는 JavaScript 함수를 정의했습니다. </h6>
+              <h6>날씨 아이콘 파일 이름과 날씨를 매핑한 객체를 정의하고 날씨 문자열에 해당하는 아이콘 파일 이름을 반환해 이미지를 출력합니다.  </h6>
+              <h6>날씨 정보가 변경되면 이미지가 중복되어 노출될 수 있기 때문에 코드 실행 시 이미지를 삭제하고 다시 추가하도록 설계했습니다.  </h6>
+
+
             </div>
-
-          <div class="portfolio-details-slider swiper">
-            <div class="swiper-wrapper align-items-center">
-              <img src="assets/img/portfolio/back/Crawling3.PNG" STYLE="width: 95%;">
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-
-          <div class="portfolio-info">
-            <h6>필요한것은 요일과 날씨정보 입니다. 따라서 요일을 출력하는 영역과 날씨정보를 포함하고있는 이모티콘속 날씨값을 추출합니다</h6><br>
-            <h6>추출한 값을 받고싶은 데이터로 변형해 컨트롤러에 담아 인덱스에 뿌려줍니다.</h6><br>
-          </div>
-
-          <div class="portfolio-details-slider swiper">
-            <div class="swiper-wrapper align-items-center">
-              <img src="assets/img/portfolio/back/Crawling4.PNG" STYLE="width: 95%;">
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-
-          <div class="portfolio-info">
-            <h6>인덱스에 재료가 준비되었다면 크롤링한 값에 따라 반응하는 버튼요소를 만들어줍니다.</h6><br>
-            <h6>비활성화에 나타나는 week0, 활성화에 나타나는 week1 이미지를 생성합니다</h6><br>
-            <h6>클릭한 버튼만 week1 이미지로 변환되고 나머지 버튼은 week0 이미지로 변경되도록 설계했습니다.</h6><br>
-          </div>
-
-          <div class="portfolio-details-slider swiper">
-            <div class="swiper-wrapper align-items-center">
-              <img src="assets/img/portfolio/back/Crawling5.PNG" STYLE="width: 95%;">
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-
-          <div class="portfolio-info">
-            <h6>이제 만들었던 버튼위에 크롤링해서 가져왔던 요일들을 삽입해줍니다. 빈 버튼 위에 크롤링 데이터가 들어감으로 </h6><br>
-            <h6>단순히 월,화,수,목,금,토,일을 보여주는 것이 아니라 매일 변화하는 실시간 버튼이 완성됩니다.</h6><br>
-            <h6>24시가 지나면 화요일은 가장 뒷자리로 수요일은 맨앞으로 당겨지게 됩니다.</h6><br>
-          </div>
-
-          <div class="portfolio-details-slider swiper">
-            <div class="swiper-wrapper align-items-center">
-              <img src="assets/img/portfolio/back/Crawling6.PNG" STYLE="width: 95%;">
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-
-          <div class="portfolio-info">
-            <h6>버튼을 클릭했을 때 날씨와 매칭되는 코디를 추천하도록 버튼을 설정해줍니다.</h6><br>
-            <h6>여기서 문제가 발생되는데 구글에서 제공하는 정보와 데이터베이스의 값이 매칭되지않아 컨버트하는 과정을</h6><br>
-            <h6>한번 더 거치게 됩니다. 크롤링하는 데이터에 맑음이 포함되면 맑음으로 (소나기, 뇌우, 강우)가 포함되면 전부 "비"로 변환하여 인덱스에 뿌려주었습니다.</h6><br>
-
-          </div>
-
-          <div class="portfolio-details-slider swiper">
-            <div class="swiper-wrapper align-items-center">
-              <img src="assets/img/portfolio/back/Crawling7.PNG" STYLE="width: 95%;">
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-
-          <div class="portfolio-info">
-            <h6>마지막으로 해당하는 요일 버튼을 누르면 7개의 테이블중 코디에 저장된 날씨와 해당 요일의 날씨가 매칭됩니다.</h6><br>
-            <h6>출력 결과물을 랜덤으로 출력해주어 위와같은 주간 날씨별 추천 코디 기능을 완성할 수 있었습니다.</h6><br>
-          </div>
 
 
         </div>
