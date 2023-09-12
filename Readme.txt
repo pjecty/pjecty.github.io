@@ -1,1 +1,6 @@
-이용현의 포트폴리오 페이지 입니다.
+Thanks for downloading this template!
+
+Template Name: iPortfolio
+Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+Author: BootstrapMade.com
+License: https://bootstrapmade.com/license/
